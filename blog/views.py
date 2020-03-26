@@ -40,7 +40,7 @@ def post_new(request):
             # renvoi le nouveau post à la page post_detail avec une valeur de clé
     else:
         form = PostForm()
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/post_new.html', {'form': form})
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
