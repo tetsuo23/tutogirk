@@ -11,7 +11,10 @@
 
 <body>
     <div class="page-header">
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="btn btn-primary d-flex justify-content-end">New post</span></a>
+        {% if user.is_authenticated %}
+        <!-- condition d'authentification pour que tout le monde ne puisse pas modifier -->
+
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="btn btn-primary d-flex justify-content-end">New post</span></a> {% endif %}
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
     <div class="content container">
