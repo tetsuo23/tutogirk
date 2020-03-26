@@ -4,6 +4,8 @@ from django.utils import timezone
 # importe depuis les utilitaires de django "timezone" qui récupère la date et l'heure actuelle 
 from .models import Post
 # importe la table "Post" contenue dans models.py
+from django.shortcuts import get_object_or_404
+# récupère les contenus, si ils n'existent pas renvoi une 404
 
 
 def post_list(request):
@@ -16,3 +18,7 @@ def post_list(request):
 
 def base(request):
     return render(request, 'blog/base.html', {})
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})

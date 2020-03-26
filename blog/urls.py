@@ -4,8 +4,9 @@ from . import views
 # path ("URL, nom de la vue dans VIEWS.PY,  nom de ...?")
 urlpatterns = [
 
-    path('', views.base),
-    path('post/', views.post_list, name='post_list'),
+    # path('', views.base),
+    path('', views.post_list, name='post_list'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
 
     
 
