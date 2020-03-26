@@ -1,24 +1,11 @@
-body {
-    height: 100vh;
-}
-
 h1 a,
 h2 a {
     color: #C25100;
 }
 
 .page-header {
-    height: 15%;
-}
-
-#header {
-    height: 15Opx;
     background-color: #00000022;
     border: 1px solid rgb(138, 132, 132);
     border-bottom: 2px dotted black;
     margin: 2%;
-}
-
-.date {
-    color: #C25100
 }

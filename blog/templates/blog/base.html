@@ -10,21 +10,10 @@
 </head>
 
 <body>
-
-    <div class="container-fluid" id="header">
-        <div class="row d-flex align-items-center">
-            <div class="page-header">
-                <div class="col-md-10">
-                    <h1><a href="/">Django Girls Blog</a></h1>
-                </div>
-                <div class="col-md-2">
-                    <a href="{% url 'post_new' %}" class=""><span class="btn btn-secondary ">New post</span></a>
-                </div>
-
-            </div>
-        </div>
+    <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="btn btn-primary d-flex justify-content-end">New post</span></a>
+        <h1><a href="/">Django Girls Blog</a></h1>
     </div>
-
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
