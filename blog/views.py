@@ -32,7 +32,7 @@ def post_new(request):
         if form.is_valid():
             # si tous les champs sont remplis correctement
             post = form.save(commit=False)
-            post.auteur = request.user
+            post.author = request.user
             post.published_date = timezone.now()
             post.save()
             # le formulaire est sauvegardé
