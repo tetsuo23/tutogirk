@@ -14,7 +14,13 @@
         {% if user.is_authenticated %}
         <!-- condition d'authentification pour que tout le monde ne puisse pas modifier -->
 
+<<<<<<< HEAD
         <a href="{% url 'post_new'  %}" class="top-menu"><span class="btn btn-primary d-flex justify-content-end">New post</span></a> {% endif %}
+=======
+        <a href="{% url 'post_new' %}" class="top-menu">
+            <span class="btn btn-primary d-flex justify-content-end">New post</span></a>
+        {% endif %}
+>>>>>>> 1030f242f5e2d14aaa26f60eb3af161fa9539c9c
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
     <div class="content container">
