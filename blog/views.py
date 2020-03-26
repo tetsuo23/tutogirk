@@ -6,6 +6,9 @@ from .models import Post
 # importe la table "Post" contenue dans models.py
 from django.shortcuts import get_object_or_404
 # récupère les contenus, si ils n'existent pas renvoi une 404
+from .forms import PostForm
+# importe la bibliothèque de formulaire
+from django.shortcuts import redirect
 
 
 def post_list(request):
@@ -22,3 +25,20 @@ def base(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        # si la methode est égale à POST ( si on envoie du nouveau contenu)
+        if form.is_valid():
+            # si tous les champs sont remplis correctement
+            post = form.save(commit=False)
+            post.auteur = request.user
+            post.published_date = timezone.now()
+            post.save()
+            # le formulaire est sauvegardé
+            return redirect('post_detail', pk=post.pk)
+            # renvoi le nouveau post à la page post_detail avec une valeur de clé
+    else:
+        form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})
