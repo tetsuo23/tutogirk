@@ -36,4 +36,3 @@ virtualenv==20.0.7
 virtualenvwrapper-win==1.2.6
 Werkzeug==0.16.0
 wrapt==1.11.2
-python-3.8.2
