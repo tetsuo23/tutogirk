@@ -7,7 +7,7 @@ colorama==0.4.1
 distlib==0.3.0
 dj-database-url==0.5.0
 dj-static==0.0.6
-Django==3.0.3
+Django==3.0.7
 django-materialize==1.0.1a2
 django-relativefilepathfield==1.0.3
 django-toolbelt==0.0.1
